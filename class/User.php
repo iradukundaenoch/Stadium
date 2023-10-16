@@ -1,7 +1,8 @@
 <?php
 require_once('../interface/iUser.php');
 require_once('../database/Database.php');
-class User extends Database implements iUser {
+class User extends Database implements iUser
+{
 
 	public function loginUser($un, $pwd)
 	{
@@ -11,9 +12,9 @@ class User extends Database implements iUser {
 				AND user_password = ?;
 		";
 		return $this->getRow($sql, [$un, $pwd]);
-	}//end loginUser
+	} //end loginUser
 
-}//end class User
+} //end class User
 
 $user = new User();//instance
 /* End of file User.php */

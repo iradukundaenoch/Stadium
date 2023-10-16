@@ -1,6 +1,6 @@
-<?php 
+<?php
 require_once('../class/Book.php');
-if(isset($_POST['tracker'])){
+if (isset($_POST['tracker'])) {
 	$tracker = $_POST['tracker'];
 	// echo $tracker;
 
@@ -8,6 +8,6 @@ if(isset($_POST['tracker'])){
 	$return['valid'] = true;
 	$return['msg'] = "Reservation Deleted Successfully!";
 	echo json_encode($return);
-}//isset
-	
+} //isset
+
 $book->Disconnect();

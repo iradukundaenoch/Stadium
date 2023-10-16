@@ -1,14 +1,13 @@
 <?php
 require_once('../database/Database.php');
-$db = new Database(); 
+$db = new Database();
 
-if(session_status() == PHP_SESSION_NONE)
-{
-	session_start();//start session if session not start
+if (session_status() == PHP_SESSION_NONE) {
+	session_start(); //start session if session not start
 }
 
 
-if(isset($_POST['bookBy'])){
+if (isset($_POST['bookBy'])) {
 	// echo 'yes';
 	$bookBy = $_POST['bookBy'];
 	$cont = $_POST['cont'];
@@ -28,21 +27,18 @@ if(isset($_POST['bookBy'])){
 			 VALUES(?,?,?,?,?,?,?,?,?,?);
 	";
 
-$result = $db->insertRow($sql, [$bookBy, $cont, $address, $fN, $age, $gender, $deptDate, $acc, $origin, $tracker]);
+	$result = $db->insertRow($sql, [$bookBy, $cont, $address, $fN, $age, $gender, $deptDate, $acc, $origin, $tracker]);
 
-$return['valid'] = true;
-$return['url'] = "payment.php";
+	$return['valid'] = true;
+	$return['url'] = "payment.php";
 
-echo json_encode($return);
+	echo json_encode($return);
+} //if isset
 
-}//if isset
-
-					// bookBy : bookBy,
-					// 	email : email,
-					// 	address : address,
-					// 	fN : fN,
-					// 	age : age 
+// bookBy : bookBy,
+// 	email : email,
+// 	address : address,
+// 	fN : fN,
+// 	age : age 
 
 $db->Disconnect();
- ?>
-

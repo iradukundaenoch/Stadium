@@ -7,12 +7,12 @@
 			</div>
 			<div class="modal-body">
 				<div id="body-cont" class="text-danger">
-					
+
 				</div>
 			</div>
 			<div class="modal-footer">
 				<button type="button" id="message-box-ok" class="btn btn-default" data-dismiss="modal">OK
-				<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 				</button>
 			</div>
 		</div>

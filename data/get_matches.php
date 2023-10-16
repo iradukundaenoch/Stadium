@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once('database/Database.php');
 $db = new Database();
 $sql = "SELECT *
@@ -8,4 +8,3 @@ $sql = "SELECT *
 $origins = $db->getRows($sql);
 
 $db->Disconnect();
-

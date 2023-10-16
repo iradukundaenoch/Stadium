@@ -1,5 +1,6 @@
-<?php 
+<?php
 
-interface iUser{
+interface iUser
+{
 	public function loginUser($un, $pwd);
 }//end iUser

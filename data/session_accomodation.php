@@ -1,12 +1,11 @@
-<?php 
+<?php
 require_once('../database/Database.php');
-if(session_status() == PHP_SESSION_NONE)
-{
-	session_start();//start session if session not start
+if (session_status() == PHP_SESSION_NONE) {
+	session_start(); //start session if session not start
 }
 $db = new Database();
 
-if(isset($_POST['acc']) && isset($_POST['tp'])){
+if (isset($_POST['acc']) && isset($_POST['tp'])) {
 	$_SESSION['accomodation'] = $_POST['acc'];
 	$_SESSION['totalPass'] = $_POST['tp'];
 
@@ -26,7 +25,7 @@ if(isset($_POST['acc']) && isset($_POST['tp'])){
 	";
 	$result = $db->getRow($sql, [$acc_id, $dp_date]);
 	// echo $result['totalBooked'];
-	$slot = 22000 - $result['totalBooked'];	
+	$slot = 22000 - $result['totalBooked'];
 	$slot = $slot - $tp;
 	$wtf['slot'] = $slot;
 	echo json_encode($wtf);

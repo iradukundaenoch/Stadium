@@ -1,7 +1,8 @@
-<?php 
+<?php
 require_once('../database/Database.php');
 require_once('../interface/iBook.php');
-class Book extends Database implements iBook{
+class Book extends Database implements iBook
+{
 
 	public function getAllBook()
 	{
@@ -10,20 +11,20 @@ class Book extends Database implements iBook{
 				GROUP BY book_tracker;
 		";
 		return $this->getRows($sql);
-	}//end getAllBook
+	} //end getAllBook
 
 	public function deleteBook($tracker)
 	{
 		$sql = "DELETE FROM booked WHERE book_tracker = ?;";
 		// return true;
 		return $this->deleteRow($sql, [$tracker]);
-	}//end deleteBook
+	} //end deleteBook
 
-	public function getBookBy($tracker)//limit 1
+	public function getBookBy($tracker) //limit 1
 	{
 		$sql = "SELECT * FROM booked WHERE book_tracker = ? LIMIT 1";
 		return $this->getRow($sql, [$tracker]);
-	}//end getPassengerList
+	} //end getPassengerList
 
 	public function getPassengers($tracker)
 	{
@@ -34,7 +35,7 @@ class Book extends Database implements iBook{
 				WHERE b.book_tracker = ?;
 		";
 		return $this->getRows($sql, [$tracker]);
-	}///end getPassengers
+	} ///end getPassengers
 
 	public function selectBook($book_id)
 	{
@@ -47,7 +48,7 @@ class Book extends Database implements iBook{
 				WHERE b.book_id = ?;
 		";
 		return $this->getRow($sql, [$book_id]);
-	}//end selectBook
+	} //end selectBook
 
 	public function deleteBookByID($bid)
 	{
@@ -56,8 +57,8 @@ class Book extends Database implements iBook{
 				WHERE book_id = ?
 		";
 		return $this->deleteRow($sql, [$bid]);
-	}//end deleteBookByID
+	} //end deleteBookByID
 
-}//end class
+} //end class
 
 $book = new Book();
