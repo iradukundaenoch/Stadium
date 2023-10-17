@@ -14,6 +14,11 @@ class User extends Database implements iUser
 		return $this->getRow($sql, [$un, $pwd]);
 	} //end loginUser
 
+	public function register($un, $pwd)
+	{
+		$sql = "INSERT INTO user (user_account, user_password) VALUES (?, ?)";
+		return $this->insertRow($sql, [$un, $pwd]);
+	}
 } //end class User
 
 $user = new User();//instance

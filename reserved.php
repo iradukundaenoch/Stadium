@@ -5,41 +5,10 @@ require_once('data/get_matches.php');
 // print_r($origins);
 // echo '</pre>';
 ?>
-<!DOCTYPE html>
-<html lang="">
-
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>INEN | MATCH INFO</title>
-
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-theme.min.css">
-
-</head>
+<?php include('./partials/header.php'); ?>
 
 <body style="background: url('images/night-ground.jpg') center center no-repeat;background-size:cover; background-attachment: fixed;">
-
-	<nav class="navbar navbar-inverse" style="height: 90px; border-bottom: 6px solid orangered;">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#" style="font-size: 30px;"><br><b style="color: orangered;">INEN</b> Online Ticketing</a>
-			</div>
-			<ul class="nav navbar-nav" style="padding-top:15px;">
-				<li class="active">
-					<a href="#">Rerservation
-						<span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
-					</a>
-				</li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="index.php"><span class="glyphicon glyphicon-backward"></span> Back To Home</a></li>
-			</ul>
-		</div>
-	</nav>
-
+	<?php include('./partials/nav.php'); ?>
 
 	<div class="container-fluid">
 		<div class="col-md-1"></div>

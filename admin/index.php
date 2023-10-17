@@ -1,39 +1,7 @@
-<!DOCTYPE html>
-<html lang="">
-
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Online Ticket Reservation</title>
-
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.min.css">
-
-</head>
+<?php include_once('../partials/header.php'); ?>
 
 <body>
-
-	<nav class="navbar navbar-inverse" style="height: 90px; border-bottom: 6px solid orangered;">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#" style="font-size: 30px;"><br><b style="color: orangered;">INEN</b> Online Ticketing</a>
-
-			<ul class="nav navbar-nav">
-				<li>
-					<a href="#"></a>
-				</li>
-				<li>
-					<a href="#"></a>
-				</li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="../"><span class="glyphicon glyphicon-backward"></span> Return Home</a></li>
-			</ul>
-		</div>
-	</nav>
-
-
+	<?php include_once('../partials/nav.php'); ?>
 
 	<div class="col-md-3"></div>
 	<div class="col-md-6">
@@ -89,17 +57,14 @@
 		$(document).on('submit', '#form-login', function(event) {
 			event.preventDefault();
 			/* Act on the event */
-			// console.log('test');
-			var un = $('#un').val();
-			var pwd = $('#pwd').val();
 
 			$.ajax({
 				url: '../data/login.php',
 				type: 'post',
 				dataType: 'json',
 				data: {
-					un: "admin",
-					pwd: "admin"
+					un: $('#un').val(),
+					pwd: $('#pwd').val()
 				},
 				success: function(data) {
 					console.log(data);

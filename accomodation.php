@@ -7,20 +7,8 @@ if (session_status() == PHP_SESSION_NONE) {
 if (isset($_SESSION['departure_date'])) {
 ?>
 
-	<!DOCTYPE html>
-	<html lang="">
 
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>INEN | Accomodation</title>
-
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-theme.min.css">
-
-	</head>
+	<?php include('/stadium/partials/header.php'); ?>
 
 	<body style="background: url('images/night-ground.jpg') center center no-repeat;background-size:cover; background-attachment: fixed;">
 

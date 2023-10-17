@@ -8,12 +8,13 @@ if (isset($_POST['un']) && isset($_POST['pwd'])) {
 	$pwd = $_POST['pwd'];
 
 	$pwd = $pwd; //hash
-
 	$result = $user->loginUser($un, $pwd);
+
 	if ($result > 0) {
 		$return['valid'] = true;
 		$return['url'] = "reservation.php";
 		$_SESSION['logged'] = $result['user_id'];
+		$_SESSION['role'] = $result['role'];
 	} else {
 		$return['valid'] = false;
 		$return['msg'] = "Invalid Username / Password!";
